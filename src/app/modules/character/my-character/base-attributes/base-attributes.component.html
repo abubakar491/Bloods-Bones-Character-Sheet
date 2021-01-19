@@ -1,0 +1,50 @@
+<form >
+    <div class="form-group">
+        <label for="Strength">Strength</label>
+        <input 
+            id="Strength" 
+            class="form-control form-control-sm" 
+            type="number" 
+            [(ngModel)]="characterBaseAttributes.Strength" 
+            name="Strength"
+            (change)="updatedBaseAttribute()"
+            min="0"
+        >
+    </div>
+    <div class="form-group">
+        <label for="Dexterity">Dexterity</label>
+        <input 
+            id="Dexterity" 
+            class="form-control form-control-sm" 
+            type="number" 
+            [(ngModel)]="characterBaseAttributes.Dexterity" 
+            name="Dexterity"
+            (change)="updatedBaseAttribute()"
+            min="0"
+        >
+    </div>
+    <div class="form-group">
+        <label for="Mind">Mind</label>
+        <input 
+            id="Mind" 
+            class="form-control form-control-sm" 
+            type="number" 
+            [(ngModel)]="characterBaseAttributes.Mind" 
+            name="Mind"
+            (change)="updatedBaseAttribute()"
+            min="0"
+        >
+    </div>
+    <div class="form-group">
+        <label for="Presence">Presence</label>
+        <input 
+            id="Presence" 
+            class="form-control form-control-sm" 
+            type="number" 
+            [(ngModel)]="characterBaseAttributes.Presence" 
+            name="Presence"
+            (change)="updatedBaseAttribute()"
+            min="0"
+        >
+    </div>
+</form>

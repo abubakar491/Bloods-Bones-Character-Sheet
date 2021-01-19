@@ -1,0 +1,348 @@
+<div class="alert alert-danger my-3" role="alert" *ngIf="formInvalid">
+    Error in form
+</div>
+
+<div class="alert alert-success my-3" role="alert" *ngIf="formSaved">
+    Successfully Saved
+</div>
+
+<div class="accordion mb-5" id="accordionExample">
+
+    <!-- Strength Starts -->
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h2 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Strength  
+              <span>
+                (Max Allowed : {{ characterBaseAttributes.Strength }})
+              </span>
+          </button>
+          
+          
+        </h2>
+      </div>
+  
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+            <form [formGroup]="StrengthForm">
+                <div class="form-group">
+                    <label for="Fighting" class="mr-4">
+                        <h4>
+                            Fighting
+                        </h4>
+                    </label>
+                    <ng-template #t let-fill="fill">
+                        <span class="star" [class.full]="fill === 100">
+                            &#9733;
+                        </span>
+                    </ng-template>
+                      
+                    <ngb-rating formControlName="Fighting" [starTemplate]="t" [max]="5"></ngb-rating>
+
+                    <span *ngIf="StrengthForm.controls['Fighting'].hasError('max')" class="text-danger">
+                        Error : Max Allowed {{ characterBaseAttributes.Strength }}
+                    </span>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+    <!-- Strength Ends -->
+
+    <!-- Dexterity Starts -->
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h2 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Dexterity
+            <span>
+                (Max Allowed : {{ characterBaseAttributes.Dexterity }})
+              </span>
+          </button>
+        </h2>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body">
+            <form [formGroup]="DexterityForm">
+                <div class="form-group">
+                    <label for="Fighting" class="mr-4">
+                        <h4>
+                            Fighting
+                        </h4>
+                    </label>
+                    <ng-template #t let-fill="fill">
+                        <span class="star" [class.full]="fill === 100">
+                            &#9733;
+                        </span>
+                    </ng-template>
+                      
+                    <ngb-rating formControlName="Fighting" [starTemplate]="t" [max]="5"></ngb-rating>
+
+                    <span *ngIf="DexterityForm.controls['Fighting'].hasError('max')" class="text-danger">
+                        Error : Max Allowed {{ characterBaseAttributes.Dexterity }}
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="Thievery" class="mr-4">
+                        <h4>
+                            Thievery
+                        </h4>
+                    </label>
+                    <ng-template #t let-fill="fill">
+                        <span class="star" [class.full]="fill === 100">
+                            &#9733;
+                        </span>
+                    </ng-template>
+                      
+                    <ngb-rating formControlName="Thievery" [starTemplate]="t" [max]="5"></ngb-rating>
+
+                    <span *ngIf="DexterityForm.controls['Thievery'].hasError('max')" class="text-danger">
+                        Error : Max Allowed {{ characterBaseAttributes.Dexterity }}
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="Stealth" class="mr-4">
+                        <h4>
+                            Stealth
+                        </h4>
+                    </label>
+                    <ng-template #t let-fill="fill">
+                        <span class="star" [class.full]="fill === 100">
+                            &#9733;
+                        </span>
+                    </ng-template>
+                      
+                    <ngb-rating formControlName="Stealth" [starTemplate]="t" [max]="5"></ngb-rating>
+
+                    <span *ngIf="DexterityForm.controls['Stealth'].hasError('max')" class="text-danger">
+                        Error : Max Allowed {{ characterBaseAttributes.Dexterity }}
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="Archery" class="mr-4">
+                        <h4>
+                            Archery
+                        </h4>
+                    </label>
+                    <ng-template #t let-fill="fill">
+                        <span class="star" [class.full]="fill === 100">
+                            &#9733;
+                        </span>
+                    </ng-template>
+                      
+                    <ngb-rating formControlName="Archery" [starTemplate]="t" [max]="5"></ngb-rating>
+                    <span *ngIf="DexterityForm.controls['Archery'].hasError('max')" class="text-danger">
+                        Error : Max Allowed {{ characterBaseAttributes.Dexterity }}
+                    </span>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+    <!-- Dexterity Ends -->
+
+    <!-- Mind Starts -->
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h2 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Mind
+            <span>
+                (Max Allowed : {{ characterBaseAttributes.Mind }})
+              </span>
+          </button>
+        </h2>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <div class="card-body">
+            <form [formGroup]="MindForm">
+                <div class="form-group">
+                    <label for="Learned" class="mr-4">
+                        <h4>
+                            Learned
+                        </h4>
+                    </label>
+                    <ng-template #t let-fill="fill">
+                        <span class="star" [class.full]="fill === 100">
+                            &#9733;
+                        </span>
+                    </ng-template>
+                      
+                    <ngb-rating formControlName="Learned" [starTemplate]="t" [max]="5"></ngb-rating>
+                    <span *ngIf="MindForm.controls['Learned'].hasError('max')" class="text-danger">
+                        Error : Max Allowed {{ characterBaseAttributes.Mind }}
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="Survival" class="mr-4">
+                        <h4>
+                            Survival
+                        </h4>
+                    </label>
+                    <ng-template #t let-fill="fill">
+                        <span class="star" [class.full]="fill === 100">
+                            &#9733;
+                        </span>
+                    </ng-template>
+                      
+                    <ngb-rating formControlName="Survival" [starTemplate]="t" [max]="5"></ngb-rating>
+                    <span *ngIf="MindForm.controls['Survival'].hasError('max')" class="text-danger">
+                        Error : Max Allowed {{ characterBaseAttributes.Mind }}
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="Perception" class="mr-4">
+                        <h4>
+                            Perception
+                        </h4>
+                    </label>
+                    <ng-template #t let-fill="fill">
+                        <span class="star" [class.full]="fill === 100">
+                            &#9733;
+                        </span>
+                    </ng-template>
+                      
+                    <ngb-rating formControlName="Perception" [starTemplate]="t" [max]="5"></ngb-rating>
+                    <span *ngIf="MindForm.controls['Perception'].hasError('max')" class="text-danger">
+                        Error : Max Allowed {{ characterBaseAttributes.Mind }}
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="Apothecary" class="mr-4">
+                        <h4>
+                            Apothecary
+                        </h4>
+                    </label>
+                    <ng-template #t let-fill="fill">
+                        <span class="star" [class.full]="fill === 100">
+                            &#9733;
+                        </span>
+                    </ng-template>
+                      
+                    <ngb-rating formControlName="Apothecary" [starTemplate]="t" [max]="5"></ngb-rating>
+                    <span *ngIf="MindForm.controls['Apothecary'].hasError('max')" class="text-danger">
+                        Error : Max Allowed {{ characterBaseAttributes.Mind }}
+                    </span>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+    <!-- Mind Ends -->
+
+    <!-- Presence Starts -->
+    <div class="card">
+        <div class="card-header" id="headingFour">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Presence
+                <span>
+                    (Max Allowed : {{ characterBaseAttributes.Presence }})
+                  </span>
+            </button>
+          </h2>
+        </div>
+        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+          <div class="card-body">
+            <form [formGroup]="PresenceForm">
+                <div class="form-group">
+                    <label for="Intimidation" class="mr-4">
+                        <h4>
+                            Intimidation
+                        </h4>
+                    </label>
+                    <ng-template #t let-fill="fill">
+                        <span class="star" [class.full]="fill === 100">
+                            &#9733;
+                        </span>
+                    </ng-template>
+                      
+                    <ngb-rating formControlName="Intimidation" [starTemplate]="t" [max]="5"></ngb-rating>
+                    <span *ngIf="PresenceForm.controls['Intimidation'].hasError('max')" class="text-danger">
+                        Error : Max Allowed {{ characterBaseAttributes.Presence }}
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="Performance" class="mr-4">
+                        <h4>
+                            Performance
+                        </h4>
+                    </label>
+                    <ng-template #t let-fill="fill">
+                        <span class="star" [class.full]="fill === 100">
+                            &#9733;
+                        </span>
+                    </ng-template>
+                      
+                    <ngb-rating formControlName="Performance" [starTemplate]="t" [max]="5"></ngb-rating>
+                    <span *ngIf="PresenceForm.controls['Performance'].hasError('max')" class="text-danger">
+                        Error : Max Allowed {{ characterBaseAttributes.Presence }}
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="Manipulation" class="mr-4">
+                        <h4>
+                            Manipulation
+                        </h4>
+                    </label>
+                    <ng-template #t let-fill="fill">
+                        <span class="star" [class.full]="fill === 100">
+                            &#9733;
+                        </span>
+                    </ng-template>
+                      
+                    <ngb-rating formControlName="Manipulation" [starTemplate]="t" [max]="5"></ngb-rating>
+                    <span *ngIf="PresenceForm.controls['Manipulation'].hasError('max')" class="text-danger">
+                        Error : Max Allowed {{ characterBaseAttributes.Presence }}
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="Insight" class="mr-4">
+                        <h4>
+                            Insight
+                        </h4>
+                    </label>
+                    <ng-template #t let-fill="fill">
+                        <span class="star" [class.full]="fill === 100">
+                            &#9733;
+                        </span>
+                    </ng-template>
+                      
+                    <ngb-rating formControlName="Insight" [starTemplate]="t" [max]="5"></ngb-rating>
+                    <span *ngIf="PresenceForm.controls['Insight'].hasError('max')" class="text-danger">
+                        Error : Max Allowed {{ characterBaseAttributes.Presence }}
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="Power" class="mr-4">
+                        <h4>
+                            Power
+                        </h4>
+                    </label>
+                    <ng-template #t let-fill="fill">
+                        <span class="star" [class.full]="fill === 100">
+                            &#9733;
+                        </span>
+                    </ng-template>
+                      
+                    <ngb-rating formControlName="Power" [starTemplate]="t" [max]="5"></ngb-rating>
+                    <span *ngIf="PresenceForm.controls['Power'].hasError('max')" class="text-danger">
+                        Error : Max Allowed {{ characterBaseAttributes.Presence }}
+                    </span>
+                </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Presence Ends -->
+      <button 
+        type="button" 
+        class="btn btn-dark float-right mt-2 col-md-12 hide-on-print"
+        (click)="saveSkills()"
+      >
+        Save Forms
+      </button>
+</div>

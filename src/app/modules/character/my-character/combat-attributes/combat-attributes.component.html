@@ -1,0 +1,68 @@
+<form >
+    <div class="form-group">
+        <label for="Vitality">Vitality</label>
+        <input 
+            id="Vitality"  
+            class="form-control form-control-sm" 
+            type="number" 
+            disabled
+            [ngModel]="combatAttributes.Vitality" 
+            name="Vitality"
+        >
+    </div>
+    <div class="form-group">
+        <label for="Evasion">Evasion</label>
+        <input 
+            id="Evasion" 
+            class="form-control form-control-sm" 
+            type="number" 
+            disabled
+            [ngModel]="combatAttributes.Evasion" 
+            name="Evasion"
+        >
+    </div>
+    <div class="form-group">
+        <label for="Armor">Armor</label>
+        <input 
+            id="Armor" 
+            class="form-control form-control-sm" 
+            type="number" 
+            disabled
+            [ngModel]="combatAttributes.Armor" 
+            name="Armor"
+        >
+    </div>
+    <div class="form-group">
+        <label for="Alacrity">Alacrity</label>
+        <input 
+            id="Alacrity" 
+            class="form-control form-control-sm" 
+            type="number" 
+            disabled
+            [ngModel]="combatAttributes.Alacrity" 
+            name="Alacrity"
+        >
+    </div>
+    <div class="form-group">
+        <label for="Tenacity">Tenacity</label>
+        <input 
+            id="Tenacity" 
+            class="form-control form-control-sm" 
+            type="number" 
+            [(ngModel)]="combatAttributes.Tenacity" 
+            name="Tenacity"
+            (change)="updatedTenacity()"
+        >
+    </div>
+    <div class="form-group">
+        <label for="Power">Power</label>
+        <input 
+            id="Power" 
+            class="form-control form-control-sm" 
+            type="number" 
+            disabled
+            [ngModel]="combatAttributes.Power" 
+            name="Power"
+        >
+    </div>
+</form>

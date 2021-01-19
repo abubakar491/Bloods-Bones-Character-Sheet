@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@media print {
+    .hide-on-print {
+        display: none;
+    }
+
+    body { font-size: 10pt }
+
+    #collapseOne,
+    #collapseTwo,
+    #collapseThree,
+    #collapseFour{
+        display: block;
+    }
+
+}
